@@ -9,5 +9,5 @@ import retrofit2.http.GET;
 
 public interface ApiInterface {
     @GET("blog/")
-    Call<List<ImagesResponse>> getAllImages();
+    Call<List<BlogDataResponse>> getAllBlogData();
 }

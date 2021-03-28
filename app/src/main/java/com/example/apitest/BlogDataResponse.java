@@ -2,7 +2,7 @@ package com.example.apitest;
 
 import java.util.List;
 
-public class ImagesResponse extends Root {
+public class BlogDataResponse {
     public int id;
     public int post_category_id;
     public int featured;
@@ -11,6 +11,19 @@ public class ImagesResponse extends Root {
     public String body;
     public String created_at;
     public String updated_at;
+
+    public BlogDataResponse(int id, int post_category_id, int featured, String title, String thumbnail, String body, String created_at, String updated_at) {
+        this.id = id;
+        this.post_category_id = post_category_id;
+        this.featured = featured;
+        this.title = title;
+        this.thumbnail = thumbnail;
+        this.body = body;
+        this.created_at = created_at;
+        this.updated_at = updated_at;
+    }
+
+
 
     public int getId() {
         return id;
@@ -45,7 +58,8 @@ public class ImagesResponse extends Root {
     }
 
     public String getThumbnail() {
-        return thumbnail;
+        String newThumb= "https://bongiyo.com/storage/"+ thumbnail;
+        return newThumb;
     }
 
     public void setThumbnail(String thumbnail) {
@@ -86,5 +100,5 @@ class Root{
     }
 
     public int current_page;
-    public List<ImagesResponse> data;
+    public List<BlogDataResponse> data;
 }
